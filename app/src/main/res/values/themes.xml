@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.NatureOvergrowth" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#4A7C36</item>
+        <item name="colorPrimaryVariant">#3A632A</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="android:windowBackground">#E8F0E1</item>
+        <item name="android:statusBarColor">#4A7C36</item>
+    </style>
+</resources>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F0E1">
+
+    <!-- Nature canvas drawn behind everything -->
+    <com.nature.overgrowth.NatureCanvasView
+        android:id="@+id/natureCanvas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Scrollable content on top -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="48dp">
+
+            <!-- Box 1: Hero title -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/box1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#F5FFF0"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="The Secret Garden"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="#2B3D26"
+                        android:fontFamily="serif"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Watch as living vines, leaves and flowers grow organically across your screen. Tap the Grow button below to let nature take over — each press bursts life outward in a new direction."
+                        android:textSize="15sp"
+                        android:textColor="#4A5C3C"
+                        android:lineSpacingMultiplier="1.6"
+                        android:fontFamily="sans-serif-light" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Box 2: medium -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/box2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFDF5"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌿  Smart Growth"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#2B3D26"
+                        android:layout_marginBottom="10dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Branches sense the UI boxes beneath them. Vines curl around edges and gracefully avoid text, then bloom into leaves and flowers at their tips."
+                        android:textSize="14sp"
+                        android:textColor="#556649"
+                        android:lineSpacingMultiplier="1.5" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Box 3: narrow pill info row -->
+            <LinearLayout
+                android:id="@+id/box3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_pill"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/leafCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="#4A7C36" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leaves"
+                        android:textSize="12sp"
+                        android:textColor="#6B8C5A"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#8AB07A"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/flowerCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="#C850A0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flowers"
+                        android:textSize="12sp"
+                        android:textColor="#6B8C5A"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#8AB07A"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/branchCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="#8B6914" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vines"
+                        android:textSize="12sp"
+                        android:textColor="#6B8C5A"
+                        android:letterSpacing="0.08" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Box 4: tall card with quote -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/box4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#F0FAF0"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="36dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="❝"
+                        android:textSize="48sp"
+                        android:textColor="#8AB07A"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Adopt the pace of nature: her secret is patience."
+                        android:textSize="18sp"
+                        android:textStyle="italic"
+                        android:textColor="#2B3D26"
+                        android:fontFamily="serif"
+                        android:lineSpacingMultiplier="1.6"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="— Ralph Waldo Emerson"
+                        android:textSize="13sp"
+                        android:textColor="#7A9A6A" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Box 5: two-col tags -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/box5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="#FAFFF8"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What grows here"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#2B3D26"
+                        android:layout_marginBottom="14dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🌱  Vines"
+                            android:textSize="14sp"
+                            android:textColor="#4A5C3C"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_tag"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🍃  Leaves"
+                            android:textSize="14sp"
+                            android:textColor="#4A5C3C"
+                            android:background="@drawable/bg_tag"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🌸  Flowers"
+                            android:textSize="14sp"
+                            android:textColor="#4A5C3C"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_tag"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="✨  Magic"
+                            android:textSize="14sp"
+                            android:textColor="#4A5C3C"
+                            android:background="@drawable/bg_tag"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Control buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_controls"
+                android:padding="24dp">
+
+                <Button
+                    android:id="@+id/btnGrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="🌿  Grow Nature"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#4A7C36"
+                    android:stateListAnimator="@null"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Clear Growth"
+                    android:textSize="15sp"
+                    android:textColor="#4A7C36"
+                    android:backgroundTint="#E8F5E0"
+                    android:stateListAnimator="@null" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
